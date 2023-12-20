@@ -37,3 +37,8 @@ randomCard =
 getColour : Card -> Colour
 getColour (Card colour _ _ _) =
     colour
+
+
+isSet : Card -> Card -> Card -> Bool
+isSet _ _ _ =
+    False
