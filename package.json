@@ -1,0 +1,19 @@
+{
+  "name": "elm-tetris",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Tom Wey <tjmwey@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "elm": "^0.19.1-5"
+  },
+  "devDependencies": {
+    "@parcel/transformer-elm": "2.10.3",
+    "elm-test": "^0.19.1-revision10",
+    "parcel": "^2.10.3"
+  },
+  "scripts": {
+    "dev": "yarn parcel src/index.html",
+    "test": "elm-test"
+  }
+}
