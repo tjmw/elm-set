@@ -12,14 +12,17 @@ type alias Flags =
 
 init : Flags -> ( Model, Cmd Msg )
 init _ =
-    update Initialise Initialising
+    update ShuffleDeck Initialising
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
+update msg _ =
     case msg of
-        Initialise ->
-            ( model, Random.generate ShuffledDeck (Random.List.shuffle getDeck) )
+        ShuffleDeck ->
+            ( Initialising, Random.generate ShuffledDeck (Random.List.shuffle getDeck) )
 
         ShuffledDeck deck ->
-            ( GameState deck, Cmd.none )
+            update (DrawCards deck) Initialising
+
+        DrawCards deck ->
+            ( GameInProgress (List.drop 12 deck) (List.take 12 deck), Cmd.none )
