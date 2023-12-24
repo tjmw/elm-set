@@ -1,25 +1,11 @@
 module Main exposing (main)
 
 import Browser
-import Html exposing (Html, div, h1, text)
+import Model exposing (Model, Msg)
+import Update
+import View
 
 
-main : Program () Int Msg
+main : Program Update.Flags Model Msg
 main =
-    Browser.sandbox { init = 0, update = update, view = view }
-
-
-type Msg
-    = NoOp
-
-
-update : Msg -> number -> number
-update msg model =
-    case msg of
-        NoOp ->
-            model
-
-
-view : Int -> Html Msg
-view _ =
-    div [] [ h1 [] [ text "Welcome" ] ]
+    Browser.document { init = Update.init, update = Update.update, view = View.view, subscriptions = \_ -> Sub.none }
