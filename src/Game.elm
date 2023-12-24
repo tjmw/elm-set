@@ -33,6 +33,10 @@ type alias Deck =
     List Card
 
 
+type alias Board =
+    List Card
+
+
 randomCard : Card
 randomCard =
     Card Red Squiggle Stripe One

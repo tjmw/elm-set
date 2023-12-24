@@ -1,12 +1,18 @@
 module View exposing (view)
 
 import Browser
-import Html exposing (div, h1, text)
-import Model exposing (Model, Msg)
+import Html exposing (div, h1, span, text)
+import Model exposing (Model(..), Msg)
 
 
 view : Model -> Browser.Document Msg
-view _ =
+view model =
     { title = "Set"
-    , body = [ div [] [ h1 [] [ text "Welcome" ] ] ]
+    , body =
+        case model of
+            Initialising ->
+                [ div [] [ span [] [ text "Loading..." ] ] ]
+
+            GameInProgress deck cards ->
+                [ div [] [ h1 [] [] ] ]
     }

@@ -1,6 +1,6 @@
 module Model exposing (Model(..), Msg(..))
 
-import Game exposing (Card, Deck)
+import Game exposing (Board, Deck)
 
 
 type Msg
@@ -11,4 +11,4 @@ type Msg
 
 type Model
     = Initialising
-    | GameInProgress Deck (List Card)
+    | GameInProgress Deck Board
