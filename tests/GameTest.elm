@@ -26,5 +26,18 @@ suite =
                             Card Red Diamond Solid Three
                     in
                     Expect.equal True (isSet card1 card2 card3)
+            , test "returns False if the cards are not a set" <|
+                \_ ->
+                    let
+                        card1 =
+                            Card Red Diamond Solid One
+
+                        card2 =
+                            Card Red Squiggle Solid Two
+
+                        card3 =
+                            Card Red Diamond Solid Three
+                    in
+                    Expect.equal True (isSet card1 card2 card3)
             ]
         ]
