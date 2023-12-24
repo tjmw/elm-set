@@ -29,6 +29,10 @@ type Card
     = Card Colour Shape Shading Count
 
 
+type alias Deck =
+    List Card
+
+
 randomCard : Card
 randomCard =
     Card Red Squiggle Stripe One

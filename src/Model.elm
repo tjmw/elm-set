@@ -1,12 +1,13 @@
-module Model exposing (Model, Msg)
+module Model exposing (Model(..), Msg(..))
 
-import Game exposing (Card)
+import Game exposing (Deck)
 
 
 type Msg
-    = NoOp
+    = Initialise
+    | ShuffledDeck Deck
 
 
-type alias Model =
-    { deck : List Card
-    }
+type Model
+    = Initialising
+    | GameState Deck
