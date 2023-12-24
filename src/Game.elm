@@ -92,3 +92,24 @@ propertyAllSame map card1 card2 card3 =
 propertyAllDifferent : (Card -> a) -> Card -> Card -> Card -> Bool
 propertyAllDifferent map card1 card2 card3 =
     map card1 /= map card2 && map card2 /= map card3 && map card1 /= map card3
+
+
+getDeck : List Card
+getDeck =
+    [ Red, Green, Purple ]
+        |> List.concatMap
+            (\color ->
+                [ Diamond, Squiggle, Oval ]
+                    |> List.concatMap
+                        (\shape ->
+                            [ Solid, Stripe, Open ]
+                                |> List.concatMap
+                                    (\shading ->
+                                        [ One, Two, Three ]
+                                            |> List.map
+                                                (\count ->
+                                                    Card color shape shading count
+                                                )
+                                    )
+                        )
+            )

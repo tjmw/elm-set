@@ -40,4 +40,9 @@ suite =
                     in
                     Expect.equal True (isSet card1 card2 card3)
             ]
+        , describe "getDeck" <|
+            [ test "returns a deck of 81 cards" <|
+                \_ ->
+                    Expect.equal 81 (List.length getDeck)
+            ]
         ]
