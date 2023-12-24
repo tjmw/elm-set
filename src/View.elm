@@ -2,6 +2,7 @@ module View exposing (view)
 
 import Browser
 import Html exposing (div, h1, span, text)
+import Html.Attributes exposing (class)
 import Model exposing (Model(..), Msg)
 
 
@@ -14,5 +15,5 @@ view model =
                 [ div [] [ span [] [ text "Loading..." ] ] ]
 
             GameInProgress deck cards ->
-                [ div [] [ h1 [] [] ] ]
+                [ div [] [ h1 [] [ div [ class "card" ] [] ] ] ]
     }
