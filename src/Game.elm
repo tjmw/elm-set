@@ -47,6 +47,42 @@ getColour (Card colour _ _ _) =
     colour
 
 
+colourToString : Colour -> String
+colourToString colour =
+    case colour of
+        Red ->
+            "red"
+
+        Green ->
+            "green"
+
+        Purple ->
+            "purple"
+
+
+countToInteger : Count -> Int
+countToInteger count =
+    case count of
+        One ->
+            1
+
+        Two ->
+            2
+
+        Three ->
+            3
+
+
+cardCountToInteger : Card -> Int
+cardCountToInteger =
+    getCount >> countToInteger
+
+
+cardColourToString : Card -> String
+cardColourToString =
+    getColour >> colourToString
+
+
 getShape : Card -> Shape
 getShape (Card _ shape _ _) =
     shape

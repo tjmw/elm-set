@@ -2,6 +2,33 @@
     background-color: white;
     border: 2px solid black;
     border-radius: 10px;
-    height: 180;
+    display: inline-block;
+    height: 180px;
+    margin: 15px;
     width: 120px;
+}
+
+.symbol {
+    font-size: 50px;
+    line-height: 50px;
+}
+
+.card.red .symbol {
+    color:red;
+}
+
+.card.green .symbol {
+    color:green;
+}
+
+.card.purple .symbol {
+    color:purple;
+}
+
+.symbol-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
