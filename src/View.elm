@@ -1,7 +1,7 @@
 module View exposing (view)
 
 import Browser
-import Game exposing (Card, Shading(..), Shape(..), cardColourToString, cardCountToInteger, getShading, getShape)
+import Game exposing (Card, Shading(..), Shape(..), cardColourToString, cardCountToInteger, cardShadingToString, getShape)
 import Html exposing (Html, div, span, text)
 import Html.Attributes exposing (class)
 import List exposing (repeat)
@@ -23,7 +23,7 @@ view model =
 
 renderCard : Card -> Html Msg
 renderCard card =
-    div [ class "card", class <| cardColourToString card ] [ div [ class "symbol-container" ] (repeat (cardCountToInteger card) (renderSymbol <| getShape card)) ]
+    div [ class "card", class <| cardColourToString card, class <| cardShadingToString card ] [ div [ class "symbol-container" ] (repeat (cardCountToInteger card) (renderSymbol <| getShape card)) ]
 
 
 renderSymbol : Shape -> Html Msg

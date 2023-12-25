@@ -1,3 +1,12 @@
+:root {
+    --red: red;
+    --green: green;
+    --purple: purple;
+    --light-red: #FFCCCB;
+    --light-green: #90EE90;
+    --light-purple: #CBC3E3
+}
+
 .card {
     background-color: white;
     border: 2px solid black;
@@ -14,15 +23,57 @@
 }
 
 .card.red .symbol {
-    color:red;
+    color: var(--red);
 }
 
 .card.green .symbol {
-    color:green;
+    color: var(--green);
 }
 
 .card.purple .symbol {
-    color:purple;
+    color: var(--purple);
+}
+
+.card.red.stripe {
+    background-image: repeating-linear-gradient(
+        135deg,
+        var(--light-red),
+        var(--light-red) 2px,
+        white 2px,
+        white 4px
+    );
+}
+
+.card.purple.stripe {
+    background-image: repeating-linear-gradient(
+        135deg,
+        var(--light-purple),
+        var(--light-purple) 2px,
+        white 2px,
+        white 4px
+    );
+}
+
+.card.green.stripe {
+    background-image: repeating-linear-gradient(
+        135deg,
+        var(--light-green),
+        var(--light-green) 2px,
+        white 2px,
+        white 4px
+    );
+}
+
+.card.red.solid {
+    background-color: var(--light-red)
+}
+
+.card.green.solid {
+    background-color: var(--light-green)
+}
+
+.card.purple.solid {
+    background-color: var(--light-purple)
 }
 
 .symbol-container {

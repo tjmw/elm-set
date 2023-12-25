@@ -73,6 +73,19 @@ countToInteger count =
             3
 
 
+shadingToString : Shading -> String
+shadingToString shading =
+    case shading of
+        Solid ->
+            "solid"
+
+        Stripe ->
+            "stripe"
+
+        Open ->
+            "open"
+
+
 cardCountToInteger : Card -> Int
 cardCountToInteger =
     getCount >> countToInteger
@@ -81,6 +94,11 @@ cardCountToInteger =
 cardColourToString : Card -> String
 cardColourToString =
     getColour >> colourToString
+
+
+cardShadingToString : Card -> String
+cardShadingToString =
+    getShading >> shadingToString
 
 
 getShape : Card -> Shape
