@@ -175,3 +175,23 @@ getDeck =
                                     )
                         )
             )
+
+
+isCardSelected : Card -> List (Maybe Card) -> Bool
+isCardSelected card selectedCards =
+    List.member (Just card) selectedCards
+
+
+cardSelectionFull : List (Maybe Card) -> Bool
+cardSelectionFull selectedCards =
+    List.all isJust selectedCards
+
+
+isJust : Maybe a -> Bool
+isJust maybe =
+    case maybe of
+        Just _ ->
+            True
+
+        Nothing ->
+            False

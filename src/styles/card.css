@@ -12,9 +12,14 @@
     border: 2px solid black;
     border-radius: 10px;
     display: inline-block;
+    filter: drop-shadow(5px 5px 5px black);
     height: 180px;
     margin: 15px;
     width: 120px;
+}
+
+.card:hover {
+    cursor: pointer;
 }
 
 .symbol {
@@ -74,6 +79,10 @@
 
 .card.purple.solid {
     background-color: var(--light-purple)
+}
+
+.card.selected {
+    filter: drop-shadow(5px 5px 5px gold);
 }
 
 .symbol-container {
