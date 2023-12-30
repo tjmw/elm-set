@@ -195,3 +195,8 @@ isJust maybe =
 
         Nothing ->
             False
+
+
+drawFromDeck : Deck -> Int -> ( Deck, List Card )
+drawFromDeck deck count =
+    ( List.drop count deck, List.take count deck )
