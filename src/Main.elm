@@ -8,4 +8,9 @@ import View
 
 main : Program Update.Flags Model Msg
 main =
-    Browser.document { init = Update.init, update = Update.update, view = View.view, subscriptions = \_ -> Sub.none }
+    Browser.document
+        { init = Update.init
+        , update = Update.update
+        , view = View.view
+        , subscriptions = \_ -> Sub.none
+        }

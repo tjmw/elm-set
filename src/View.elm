@@ -24,7 +24,11 @@ view model =
 
 renderCard : List (Maybe Card) -> Card -> Html Msg
 renderCard selectedCards card =
-    div [ cardClasses card selectedCards, cardOnClick card selectedCards ] [ div [ class "symbol-container" ] (repeat (cardCountToInteger card) (renderSymbol <| getShape card)) ]
+    div
+        [ cardClasses card selectedCards
+        , cardOnClick card selectedCards
+        ]
+        [ div [ class "symbol-container" ] (repeat (cardCountToInteger card) (renderSymbol <| getShape card)) ]
 
 
 cardClasses : Card -> List (Maybe Card) -> Html.Attribute msg
