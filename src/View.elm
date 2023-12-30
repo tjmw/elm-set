@@ -34,6 +34,7 @@ cardClasses card selectedCards =
         , ( "selected", isCardSelected card selectedCards )
         , ( cardColourToString card, True )
         , ( cardShadingToString card, True )
+        , ( "disabled", (not <| isCardSelected card selectedCards) && cardSelectionFull selectedCards )
         ]
 
 
