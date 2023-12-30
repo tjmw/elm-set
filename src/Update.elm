@@ -1,7 +1,7 @@
 module Update exposing (Flags, init, update)
 
 import Game exposing (getDeck)
-import Model exposing (Model(..), Msg(..), attemptToSelectCard, deselectCard)
+import Model exposing (Model(..), Msg(..), attemptToSelectCard, deselectCard, handleSet)
 import Random
 import Random.List
 
@@ -28,7 +28,7 @@ update msg model =
             ( GameInProgress (List.drop 12 deck) (List.take 12 deck) Nothing Nothing Nothing, Cmd.none )
 
         SelectCard card ->
-            ( attemptToSelectCard model card, Cmd.none )
+            ( attemptToSelectCard model card |> handleSet, Cmd.none )
 
         DeselectCard card ->
             ( deselectCard model card, Cmd.none )

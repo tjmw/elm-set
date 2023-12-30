@@ -1,6 +1,6 @@
-module Model exposing (Model(..), Msg(..), attemptToSelectCard, deselectCard)
+module Model exposing (Model(..), Msg(..), attemptToSelectCard, deselectCard, handleSet)
 
-import Game exposing (Board, Card, Deck)
+import Game exposing (Board, Card, Deck, isSet)
 
 
 type Msg
@@ -56,3 +56,17 @@ deselectCard model card =
 
             else
                 model
+
+
+handleSet : Model -> Model
+handleSet model =
+    case model of
+        GameInProgress deck board (Just selectedCard1) (Just selectedCard2) (Just selectedCard3) ->
+            if isSet selectedCard1 selectedCard2 selectedCard3 then
+                GameInProgress deck board Nothing Nothing Nothing
+
+            else
+                model
+
+        _ ->
+            model
